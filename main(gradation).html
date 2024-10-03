@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var bDisplay = true;
+		function doDisplay(){
+			var con = document.getElementById("bottom2");
+			if(con.style.display=='none'){
+				con.style.display = 'block';
+			}else{
+				con.style.display='none';
+			}
+		}
+	</script>
+	  <meta name="viewport" content="initial-scale=1.0"> <!--지도를 위해 -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>main page</title>
+</head>
+<style>
+.gradien{
+	background: -webkit-linear-gradient(#FF0000, #0000FF);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom : 1em;
+
+}
+</style>
+<style type="text/css">
+
+body {
+	background-color:	white;
+
+}
+#page {
+    position: relative;
+    height: auto;
+    margin: auto;
+}
+#top {
+	padding-bottom: 6px;
+    height: 50px;
+    position: relative;
+		margin-top: 30px;
+		margin-bottom: 40px;
+    text-align: center;
+		color: #3CAEFF;
+    font-size: 60px;
+		font-family: Cafe24Ohsquare;
+ }
+ #top a{
+ 	text-decoration: none;
+ 	color: #3CAEFF;
+ }
+#menu{
+	float: left;
+	width: 100%;
+	height: 65px;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(130,130,235, 1) 5%, rgba(130,130,235, 1) 95%, rgba(255, 255, 255, 0) 100%);
+}
+#Lmenu{
+height: 45px;
+width: 50%;
+float: left;
+font-size: 28px;
+text-align: left;
+font-family: Cafe24Ohsquare;
+margin-top:10px;
+margin-left: 120px;
+}
+#Lmenu a{
+	text-decoration: none;
+	color:rgba(255,255,255, 0.9);
+}
+.dropdown-button {
+			background:rgba(130,130,235, 1);
+			padding: 8px;
+			font-size: 30px;
+			border: none;
+			color: white;
+			font-family: Cafe24Ohsquare;
+		}
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
+		.dropdown-content {
+			z-index: 2;
+			display: none;
+			position: absolute;
+			top: 45px;
+			color: white;
+			background:rgba(130,130,235, 0.9);
+			min-width: 200px;
+			font-size:23px;
+			padding: 5px;
+		}
+		.dropdown-content a {
+			color: white;
+			padding: 8px;
+
+			text-decoration: none;
+			display: block;
+		}
+		.dropdown-content a:hover { background-color: darkorange }
+		.dropdown:hover .dropdown-content { display: block; }
+		.dropdown:hover .dropdown-button { background-color: darkorange }
+#Rmenu{
+height: 50px;
+width: 25%;
+float: right;
+color:rgba(255,255,255, 0.9);
+font-family: Cafe24Ohsquare;
+font-size: 30px;
+text-align: right;
+margin-top:15px;
+margin-right: 120px;
+}
+#Rmenu a{
+	text-decoration: none;
+	color:rgba(255,255,255, 0.9);
+}
+#Rmenu a:hover { color: darkorange}
+ #map{
+ 	z-index: 1; /*설정 드롭다운메뉴를 앞에 오게 하기 위함*/
+	clear: both;
+	background-color: white;
+    height: 900px;
+    width: 83%;
+    float: left;
+
+}
+#right {
+	background-color: #FCF9F9;
+    height: 900px;
+    width: 16.73%;
+    float: right;
+  	text-align: center;
+}
+#right b{
+	font-size: 28px;
+	font-family: TmonMonsori;
+
+}
+#right tr{
+	height: 40px;
+	font-weight: bold;
+	font-family: NanumMyeongjo;
+}
+
+#bottom1{
+	clear: both; <!-- 상단의 흐름을 한번 끊어주기 위해 clear를 해준다. -->
+    float: left;
+	background-color: #dcdcdc;
+	height: 40px;
+	text-align: center;
+	color: RED;
+	font-style: bold;
+	font-family: Cafe24Ohsquare;
+}
+#bottom1 a:hover, a:focus { animation-duration: 3s; animation-name: rainbowLink; animation-iteration-count: infinite; }
+@keyframes rainbowLink {
+ 0% { color: #ff2a2a; }
+ 15% { color: #ff7a2a; }
+ 30% { color: #ffc52a; }
+ 45% { color: #43ff2a; }
+ 60% { color: #2a89ff; }
+ 75% { color: #202082; }
+ 90% { color: #6b2aff; }
+ 100% { color: #e82aff; }
+}
+#bottom2 {
+	padding-top: 30px;
+	display: none;
+    background-color: #EB5050	;
+		font-family: TmonMonsori;
+    height: 400px;
+    clear: both; <!-- 상단의 흐름을 한번 끊어주기 위해 clear를 해준다. -->
+    float: left; <!-- 새로운 흐름을 지정해줘야 깨지지 않는다-->
+}
+
+#bottom2 table {
+	color: white;
+	text-align: center;
+	font-size: 30px;
+
+}
+
+
+#bottom1 a{
+	font-size: 30px;
+	text-decoration: none;
+	color: RED;
+	font-weight: bold;
+}
+#bottom2 .button {
+	font-size: 30px;
+}
+@font-face {
+font-family: "Cafe24Ohsquare";
+src:url(text/Cafe24Ohsquare.ttf) format('truetype');
+}
+@font-face {
+font-family: "TmonMonsori";
+src:url(text/TmonMonsori.ttf) format('truetype');
+}
+@font-face {
+font-family: "NanumMyeongjo";
+src:url(text/NanumMyeongjo.ttf) format('truetype');
+}
+</style>
+<body>
+<div id = "page">
+<div id = "top"><b><a href ="main.html">Online Hard Hat</a></b></div>
+<div id = "menu">
+<div id ="Lmenu">
+		<div class="dropdown">
+		<button class="dropdown-button">설정</button>
+		<div class="dropdown-content">
+			<a href="#">시간 설정</a>
+			<a href="#">언어 설정</a>
+		</div>
+	</div>
+	&nbsp; &nbsp;
+	<div class="dropdown">
+	<button class="dropdown-button">게시판</button>
+	<div class="dropdown-content">
+		<a href="notice.html">공지사항</a>
+		<a href="QA.html">Q & A</a>
+	</div>
+	</div>
+</div>
+<div id ="Rmenu">
+
+	<a href ="mypage.html"> MYPAGE </a>
+	<b>|</b>
+	<a href ="login.html">LOGOUT</a>
+</div>
+</div>
+<div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 48.8583701, lng: 2.2944813},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT7sSTMO5sgyqu_1l0KuaIK_QAyv0U44c&callback=initMap"
+
+
+
+    async defer></script>
+<div id = "right">
+<p><b>인부정보</b><p>
+<div style="width: 100%; height: 90%; overflow: auto">
+<table border="0" bordercolor="#fff5ee" width="100%">
+	<tr>
+		<td>ID</td>
+		<td>근무시간</td>
+		<td>안전모 착용여부</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>6/5</td>
+		<td>o</td>
+	</tr>
+		<tr>
+		<td>2</td>
+		<td>6/6</td>
+		<td>x</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+		<tr>
+		<td>4</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+		<tr>
+		<td>5</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>9</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>11</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>12</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>13</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>14</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>15</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>16</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>17</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>18</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>19</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+	<tr>
+		<td>20</td>
+		<td>근무</td>
+		<td>o</td>
+	</tr>
+</table>
+</div>
+</div>
+<div id = "bottom1"><a class="gradient" href ="javascript:doDisplay();">SOS(Click)</a></div>
+<div id = "bottom2">
+<table  width="90%">
+	<tr>
+		<td>ID</td>
+		<td>이름</td>
+		<td>날짜</td>
+		<td>시간</td>
+		<td>위험 정보</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>안전모군</td>
+		<td>2020-06-02</td>
+		<td>17 : 13 : 57</td>
+		<td>가연성 가스 감지</td>
+		<td><input type ="button" class="button" name="btn1" value="찾 기"></td>
+		<td><input type ="button" class ="button" name="btn2" value="신고 취소" onclick="alert('정말 취소 하시겠습니까?')"></td>
+	</tr>
+		<tr>
+		<td>2</td>
+		<td>안전모양</td>
+		<td>2020-06-05</td>
+		<td>18 : 34 : 21</td>
+		<td>충격 감지</td>
+		<td><input type ="button" class ="button" name="btn1" value="찾 기"></td>
+		<td><input type ="button"  class ="button" name="btn2" value="신고 취소" onclick="alert('정말 취소 하시겠습니까?')"></td>
+	</tr>
+</table>
+</div>
+</div>
+</body>
+</html>

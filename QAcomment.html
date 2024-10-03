@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <TITLE></TITLE>
+    <style>
+    body{
+      margin-top:30px;
+      margin-left:80px;
+    }
+    @font-face {
+    font-family: "NanumGothicExtraBold";
+    src:url(text/NanumGothicExtraBold.ttf) format('truetype');
+}
+table th{
+  color:#eeeeee;
+}
+.container{
+  width:90%;
+  margin-top:50px;
+}
+        td{
+          font-family: NanumGothicExtraBold;
+          font-weight: bold;
+
+        }
+button{
+   text-align: right;
+}
+#reply_save{
+    float:right;
+}
+    </style>
+    <div class="container">
+
+		<div class="row">
+
+				<table id="table table-striped"
+					style="text-align: center; ">
+					<thead>
+						<tr>
+							<th colspan="3"
+								style="background-color: #9932cc; text-align: center;">글 보기 </th>
+						</tr>
+<tr height="2" bgcolor="#9932cc"><td colspan="3"></td></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="width: 20%;"> 글 제목 </td>
+							<td colspan="2">안전모 안전모 안전모</td>
+						</tr>
+						<tr>
+							<td>작성일</td>
+							<td colspan="2">2020년 5월 27일</td>
+						</tr>
+						<tr>
+							<td>내용</td>
+							<td colspan="2" style="height: 200px; text-align: left;">안녕하세요안녕하세요안녕하세요안녕하세요
+                안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요
+                안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요
+                안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요
+                  </td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+    <table align="left" >
+      <tr>
+        <tr height="2" bgcolor="#9932cc"><td style="width:100%;"></td></tr>
+                  <td >
+                      이름&nbsp; <input type="text" id="reply_writer" name="reply_writer" style="width:20%;" maxlength="10" placeholder="작성자"/>
+                      패스워드&nbsp; <input type="password" id="reply_password" name="reply_password" style="width:20%;" maxlength="10" placeholder="패스워드"/>
+                      <button id="reply_save" name="reply_save">댓글 등록</button>
+                  </td>
+              </tr>
+        <tr>
+          <td >
+                      <textarea id="reply_content" name="reply_content" rows="4" cols="140" style="width:100%;" placeholder="댓글을 입력하세요."></textarea>
+                  </td>
+            </tr>
+
+    </table>
+</div>
+</BODY>
+</HTML>

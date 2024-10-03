@@ -1,0 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body{
+padding: 30px;
+}
+.record {
+	border-collapse: collapse;
+	border-top: 2px solid #01ADB0;
+}  
+.record th {
+      color: #01ADB0;
+      background: #f0fAfB;
+      text-align: center;
+    }
+.record th, .record td {
+      padding: 10px;
+      border: 1px solid #A0A0A0;
+    }
+.record th:first-child, .record td:first-child {
+      border-left: 0;
+    }
+.record th:last-child, .record td:last-child {
+      border-right: 0;
+    }
+.record tr td:first-child{
+      text-align: center;
+    }

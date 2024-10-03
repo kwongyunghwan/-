@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0"> <!--지도를 위해 -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main page</title>
+</head>
+<script>
+<script type="text/javascript">
+     function initMap() {//함수 호출
+
+         //지도 스타일
+         var map = new google.maps.Map(document.getElementById('content'), {
+
+             //처음 중심 좌표
+             center: {
+                 lat: 37.500281,
+                 lng:  126.867806
+             },
+
+             //처음 줌 값. 숫자가 작을수록 낮은 배율
+             zoom: 17
+         });
+
+
+         //마커 정보
+         var locations = [
+
+             //1(학교)안전모 미착용
+             ['<div class="wrap"><div class="text-box"><h2>ID: 1</h2><h4>안전모 착용 여부:X</h4><h4>근무 시간 : 없음</h4></div></div>', 37.500281, 126.867806],
+
+
+             //2(고척돔)안전모 미착용
+             ['<div class="wrap"><div class="text-box"><h2>ID: 2</h2><h4>안전모 착용 여부:X</h4><h4>근무 시간 : 없음</h4></div></div>', 37.498432, 126.867219],
+
+
+             //3(병원)안전모 미착용
+             ['<div class="wrap"><div class="text-box"><h2>ID: 3</h2><h4>안전모 착용 여부:X</h4><h4>근무 시간 : 없음</h4></div></div>', 37.499653, 126.866345
+             ]
+
+
+             ]
+
+
+
+         //마커 이미지
+         var customicon1 = 'img/off.png';
+         //인포윈도우
+         var infowindow = new google.maps.InfoWindow();
+
+         //마커 생성
+         var marker, i;
+         for (i = 0; i < locations.length; i++) {
+             marker = new google.maps.Marker({
+
+                 //마커의 위치
+                 position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+
+                 //마커 아이콘
+                 icon: customicon1,
+
+                 //마커를 표시할 지도
+                 map: map
+             });
+
+             google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                 return function() {
+
+                     //html로 표시될 인포 윈도우의 내용
+                     infowindow.setContent(locations[i][0]);
+
+                     //인포윈도우가 표시될 위치
+                     infowindow.open(map, marker);
+                 }
+             })(marker, i));
+
+             if (marker) {
+                 marker.addListener('click', function() {
+
+                     //중심 위치를 클릭된 마커의 위치로 변경
+                     map.setCenter(this.getPosition());
+
+                     //마커 클릭 시의 줌 변화
+                     map.setZoom(19);
+                 });
+             }
+
+
+         }
+     }
+</script>
+<style>
+  #map{
+   z-index: 1; /*설정 드롭다운메뉴를 앞에 오게 하기 위함*/
+   clear: both;
+   background-color: #FAFAFA;
+     height: 900px;
+     width: 100%;
+     float: left;
+</style>
+<div id="map">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT7sSTMO5sgyqu_1l0KuaIK_QAyv0U44c&callback=initMap"
+  async defer></script>
+ </div>

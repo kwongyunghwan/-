@@ -1,0 +1,99 @@
+<HTML>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <TITLE></TITLE>
+    <link href="text/NanumGothicExtraBold.ttf" rel="stylesheet">
+    <style>
+    @font-face {
+    font-family: "NanumGothicExtraBold";
+    src:url(text/NanumGothicExtraBold.ttf) format('truetype');
+}
+        * {
+          font-family: NanumGothicExtraBold;
+          font-weight: bold;
+        }
+        body{
+          padding-top: 70px;
+          padding-left: 50px;
+          padding-bottom: 30px;
+        }
+        input[type="text"]{
+          display : block;
+		margin : 0 auto;
+		width:600px;
+		height:30px;
+          text-align: center;
+line-height : normal;
+padding: 5px 5px;
+font-family: inherit;
+border: 1px solid #00000;
+border-radius: 10px;
+outline-style: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+        }
+        input[type="password"]{
+          display : block;
+    margin : 0 auto;
+    width:600px;
+    height:30px;
+          text-align: center;
+line-height : normal;
+padding: 5px 5px;
+font-family: inherit;
+border: 1px solid #00000;
+border-radius: 10px;
+outline-style: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+        }
+    </style>
+<form method = "get" action = "input_action.php">
+<body>
+ <table>
+    <tr>
+        <td>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr >
+                    <tr height="4" bgcolor="#4169e1"><td colspan="4"></td></tr>
+                    <tr height="10" bgcolor=""><td colspan="4"></td></tr>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td width="100" align="center">제목</td>
+                    <td><input type="text" name="title" size="40" maxlength="10"></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr height="1" bgcolor=""><td colspan="4"></td></tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td align="center">이름</td>
+                    <td><input type="text" name="name" size="20" maxlength="50"></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr height="1" bgcolor=""><td colspan="4"></td></tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td align="center">내용</td>
+                    <td id="text"><textarea name="contents" cols="140" rows="13"></textarea></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr height="10" bgcolor=""><td colspan="4"></td></tr>
+                <tr height="4" bgcolor="#4169e1"><td colspan="4"></td></tr>
+                <tr align="center">
+                    <td>&nbsp;</td>
+                    <td colspan="2">
+                        <input type="submit" value="등록">
+                        <input type="submit" value="취소">
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</HTML>

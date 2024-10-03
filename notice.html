@@ -1,0 +1,80 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <TITLE></TITLE>
+    <link href="css/notice.css" rel="stylesheet">
+<style>
+@font-face {
+font-family: "NanumGothicExtraBold";
+src:url(text/Nanum  GothicExtraBold.ttf) format('truetype');
+}
+    * {
+      font-family: NanumGothicExtraBold;
+      font-weight: bold;
+    }
+</style>
+<body>
+  <?php
+                $connect = mysqli_connect('211.218.150.109', 'ci2020ohhat', '2020ohhat', 'ci2020ohhat') or die ("connect fail");
+                $query ="select * from board order by number desc";
+                $result = $connect->query($query);
+                $total = mysqli_num_rows($result);
+?>
+    <div class="board_list_wrap">
+        <table class="board_list">
+            <caption>권경환</caption>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>글쓴이</th>
+                    <th>작성일</th>
+                    <th>조회</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>4</td>
+                    <td class="tit"><a href="#">안전모야 부탁해 공지사항</a></td>
+                    <td>관리자</td>
+                    <td>2020-05-27</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td class="tit"><a href="#">안전모야 부탁해 공지사항</a></td>
+                    <td>관리자</td>
+                    <td>2020-05-27</td>
+                    <td>555</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td class="tit"><a href="#">안전모야 부탁해 공지사항</a></td>
+                    <td>관리자</td>
+                    <td>2020-05-27</td>
+                    <td>555</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="tit"><a href="#">안전모야 부탁해 공지사항</a></td>
+                    <td>관리자</td>
+                    <td>2020-05-27</td>
+                    <td>555</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="change">
+            <a href="noticeinput.html">글쓰기</a> &nbsp;&nbsp;
+            <a href="#">수정</a>
+        </div>
+        <div class="paging">
+            <a href="#">첫 페이지</a>
+            <a href="#">이전 페이지</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">다음 페이지</a>
+            <a href="#">마지막 페이지</a>
+        </div>
+    </div>
+    <table>
+</body>

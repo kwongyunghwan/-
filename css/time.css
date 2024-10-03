@@ -1,0 +1,83 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+caption {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.board_list_wrap {
+	margin-top:4%;
+	margin-left:150px;
+}
+
+.board_list {
+	width: 90%;
+	border-top: 2px solid #8000FF;
+}
+
+	.board_list tr {
+		border-bottom: 1px solid #ccc;
+		margin-left:10px;
+	}
+	.board_list th,
+	.board_list td {
+		padding: 10px;
+		font-size: 18px;
+	}
+	.board_list td {
+		text-align: center;
+	}
+	.board_list #td1 {
+		text-align: center;
+		font-size:12px;	
+		width:30%;
+	}
+	.board_list .td2 {
+		text-align: center;
+		font-size:14px;
+		width:30%;
+	}
+	.board_list #td3 {
+		text-align: center;
+		font-size:14px;
+		width:30%;
+	}
+	.board_list .td4 {
+		text-align: center;
+		font-size:14px;
+		width:40%;
+	}
+.board_list_wrap .change {
+	margin-top:20px;
+	margin-left:40%;
+	float:left;
+	font-size: 0;
+}
+input[type="button"]{
+	display: inline-block;
+	padding: 5px 10px;
+	border: 1px solid #4b0082;
+	border-radius: 5px;
+	margin-left: 5px;
+	font-size: 12px;
+}
+
+.board_list_wrap .change a {
+	display: inline-block;
+	padding: 5px 10px;
+	border: 1px solid #4b0082;
+	border-radius: 5px;
+	margin-left: 5px;
+	font-size: 12px;
+	}

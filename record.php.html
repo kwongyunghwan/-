@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>기록확인</title>
+<link href="css/record.css" rel="stylesheet">
+<style type="text/css">
+        a {
+	text-decoration: none;
+	color: #01ADB0;
+}
+</style>
+</head>
+<body>
+<?php
+    $conn = mysqli_connect('211.218.150.109', 'ci2020ohhat', '2020ohhat', 'ci2020ohhat');
+    $query = "select * from Record limit 100 order by date";
+    $result = mysqli_query($conn, $query);
+?>
+<div class="record_table">
+		<table class="record">
+			<thead>
+				<tr>
+					<th><a href='record.php?sort=date&order=<record.php?=$order=='desc'?'asc':'desc'>날짜</a></th>
+					<th><a href='record.php?sort=no&order=<record.php?=$order=='desc'?'asc':'desc'>번호</a></th>
+					<th><a href='record.php?sort=name&order=<record.php?=$order=='desc'?'asc':'desc'>이름</a></th>
+					<th><a href='record.php?sort=ht&order=<record.php?=$order=='desc'?'asc':'desc'>최고온도</a></th>
+					<th><a href='record.php?sort=avgt&order=<record.php?=$order=='desc'?'asc':'desc'>평균온도</a></th>
+					<th><a href='record.php?sort=lt&order=<record.php?=$order=='desc'?'asc':'desc'>최저온도</a></th>
+					<th><a href='record.php?sort=gasr&order=<record.php?=$order=='desc'?'asc':'desc'>가스감지</a></th>
+					<th><a href='record.php?sort=shockr&order=<record.php?=$order=='desc'?'asc':'desc'>충격감지</a></th>
+				</tr>
+			</thead>
+			<tbody>
+              <?php
+            while ($rows = mysqli_fetch_array($result)) {
+                echo '<tr><td>'.$rows['date'].
+                     '</td><td>'.$rows['no'].
+                     '</td><td>'.$rows['name'].
+                     '</td><td>'.$rows['ht'].
+                     '</td><td>'.$rows['avgt'].
+                     '</td><td>'.$rows['lt'].
+                     '</td><td>'.$rows['gasr'].
+                     '</td><td>'.$rows['shockr'].
+                     '</td></tr>';
+            }
+            ?>
+            </tbody>
+		</table>
+	</div>
+</body>
+</html>
